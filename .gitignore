@@ -4,6 +4,7 @@
 *.pyc
 __pycache__
 sCool/settings.py
+secretkey.txt
 
 # Backup files # 
 *.bak 
