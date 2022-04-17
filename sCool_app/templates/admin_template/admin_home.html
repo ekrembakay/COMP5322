@@ -10,7 +10,7 @@
           <div class="row">
             <div class="col-lg-3 col-6">
               <!-- small box -->
-              <div class="small-box bg-info">
+              <div class="small-box bg-dark">
                 <div class="inner">
                   <h3>{{ all_student_count }}</h3>
 
@@ -25,7 +25,7 @@
             <!-- ./col -->
             <div class="col-lg-3 col-6">
               <!-- small box -->
-              <div class="small-box bg-danger">
+              <div class="small-box bg-dark">
                 <div class="inner">
                   <h3>{{ staff_count }}</h3>
 
@@ -41,7 +41,7 @@
             
             <div class="col-lg-3 col-6">
               <!-- small box -->
-              <div class="small-box bg-warning">
+              <div class="small-box bg-dark">
                 <div class="inner">
                   <h3>{{ course_count }}</h3>
 
@@ -56,7 +56,7 @@
             <!-- ./col -->
             <div class="col-lg-3 col-6">
               <!-- small box -->
-              <div class="small-box bg-success">
+              <div class="small-box bg-dark">
                 <div class="inner">
                   <h3>{{ subject_count }}</h3>
 
@@ -75,7 +75,7 @@
           <div class="row">
             <div class="col-lg-6">
               <!-- PIE CHART -->
-              <div class="card card-danger">
+              <div class="card card-secondary">
                 <div class="card-header">
                   <h3 class="card-title">Student and Staff Chart</h3>
 
@@ -95,7 +95,7 @@
 
             <div class="col-lg-6">
               <!-- DONUT CHART -->
-              <div class="card card-danger">
+              <div class="card card-secondary">
                 <div class="card-header">
                   <h3 class="card-title">Total Subjects in Each Course</h3>
 
@@ -119,7 +119,7 @@
 
             <div class="col-lg-6">
               <!-- PIE CHART -->
-              <div class="card card-info">
+              <div class="card card-secondary">
                 <div class="card-header">
                   <h3 class="card-title">Total Student in Each Course</h3>
 
@@ -138,7 +138,7 @@
 
             <div class="col-lg-6">
               <!-- PIE CHART -->
-              <div class="card card-info">
+              <div class="card card-secondary">
                 <div class="card-header">
                   <h3 class="card-title">Total Students in Each Subject</h3>
 
@@ -159,7 +159,7 @@
         <div class="row">
           <div class="col-lg-12">
             <!-- BAR CHART -->
-            <div class="card card-success">
+            <div class="card card-info">
               <div class="card-header">
                 <h3 class="card-title">Staff Attendance vs Leave</h3>
 
@@ -189,7 +189,7 @@
         <div class="row">
           <div class="col-lg-12">
             <!-- BAR CHART -->
-            <div class="card card-success">
+            <div class="card card-info">
               <div class="card-header">
                 <h3 class="card-title">Student Attendance vs Leave</h3>
 
@@ -234,7 +234,7 @@
       datasets: [
         {
           data: [{{ all_student_count }}, {{ staff_count }}],
-          backgroundColor : ['#f56954', '#00a65a'],
+          backgroundColor : ['#7FB3D5', '#A9DFBF'],
         }
       ]
     }
@@ -267,7 +267,7 @@
       datasets: [
         {
           data: subject_count_list,
-          backgroundColor : ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
+          backgroundColor : ['#7FB3D5', '#A9DFBF', '#F9E79F', '#7FB3D5', '#DAF7A6 ', '#FFC300'],
         }
       ]
     }
@@ -292,7 +292,7 @@
       datasets: [
         {
           data: student_count_list_in_course,
-          backgroundColor : ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
+          backgroundColor : ['#7FB3D5', '#A9DFBF', '#F9E79F', '#7FB3D5', '#DAF7A6 ', '#FFC300'],
         }
       ]
     }
@@ -322,7 +322,7 @@
       datasets: [
         {
           data: student_count_list_in_subject,
-          backgroundColor : ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
+          backgroundColor : ['#7FB3D5', '#A9DFBF', '#F9E79F', '#7FB3D5', '#DAF7A6 ', '#FFC300'],
         }
       ]
     }

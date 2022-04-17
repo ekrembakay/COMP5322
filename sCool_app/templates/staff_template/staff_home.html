@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
-                    <div class="small-box bg-info">
+                    <div class="small-box bg-dark">
                     <div class="inner">
                         <h3>{{ students_count }}</h3>
 
@@ -30,7 +30,7 @@
                 <!-- ./col -->
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
-                    <div class="small-box bg-success">
+                    <div class="small-box bg-dark">
                     <div class="inner">
                         <h3>{{ attendance_count }}</h3>
 
@@ -45,7 +45,7 @@
                 <!-- ./col -->
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
-                    <div class="small-box bg-warning">
+                    <div class="small-box bg-dark">
                     <div class="inner">
                         <h3>{{ leave_count }}</h3>
 
@@ -60,7 +60,7 @@
                 <!-- ./col -->
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
-                    <div class="small-box bg-danger">
+                    <div class="small-box bg-dark">
                     <div class="inner">
                         <h3>{{ subject_count }}</h3>
 
@@ -79,7 +79,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <!-- PIE CHART -->
-                    <div class="card card-danger">
+                    <div class="card card-secondary">
                     <div class="card-header">
                         <h3 class="card-title">Leave Status Chart</h3>
 
@@ -99,7 +99,7 @@
 
                 <div class="col-lg-6">
                     <!-- BAR CHART -->
-                    <div class="card card-success">
+                    <div class="card card-secondary">
                     <div class="card-header">
                         <h3 class="card-title">Subjects Attend Chart</h3>
 
@@ -161,7 +161,7 @@
             datasets: [
                 {
                 data: [{{leave_count}}, {{attendance_count}}],
-                backgroundColor : ['#f56954', '#00a65a'],
+                backgroundColor : ['#7FB3D5', '#A9DFBF'],
                 }
             ]
             }
