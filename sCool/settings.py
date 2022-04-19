@@ -134,4 +134,3 @@ AUTH_USER_MODEL = "sCool_app.CustomUser"
  
 # Registering Custom Backend "EmailBackEnd"
 AUTHENTICATION_BACKENDS = ['sCool_app.EmailBackEnd.EmailBackEnd']
- 

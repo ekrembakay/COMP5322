@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
-from django.core.files.storage import FileSystemStorage #To upload Profile Picture
+from django.core.files.storage import FileSystemStorage 
 from django.urls import reverse
-import datetime # To Parse input DateTime into Python Date Time Object
+import datetime 
  
 from sCool_app.models import CustomUser, Staffs, Courses, Subjects, Students, Attendance, AttendanceReport, LeaveReportStudent, FeedBackStudent, StudentResult
  
@@ -44,7 +44,6 @@ def student_home(request):
 def student_view_attendance(request):
     student = Students.objects.get(admin=request.user.id) # Getting Logged in Student Data
     course = student.course_id # Getting Course Enrolled of LoggedIn Student
-    # course = Courses.objects.get(id=student.course_id.id) # Getting Course Enrolled of LoggedIn Student
     subjects = Subjects.objects.filter(course_id=course) # Getting the Subjects of Course Enrolled
     context = {
         "subjects": subjects
@@ -79,9 +78,9 @@ def student_view_attendance_post(request):
         attendance_reports = AttendanceReport.objects.filter(attendance_id__in=attendance, student_id=stud_obj)
  
         # for attendance_report in attendance_reports:
-        #     print("Date: "+ str(attendance_report.attendance_id.attendance_date), "Status: "+ str(attendance_report.status))
+        # print("Date: "+ str(attendance_report.attendance_id.attendance_date), "Status: "+ str(attendance_report.status))
  
-        # messages.success(request, "Attendacne View Success")
+        # messages.success(request, "Attendance View Success")
  
         context = {
             "subject_obj": subject_obj,
@@ -193,4 +192,3 @@ def student_view_result(request):
         "student_result": student_result,
     }
     return render(request, "student_template/view_result.html", context)
- 

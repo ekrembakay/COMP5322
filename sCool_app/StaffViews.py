@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.contrib import messages
-from django.core.files.storage import FileSystemStorage #To upload Profile Picture
+from django.core.files.storage import FileSystemStorage 
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 from django.core import serializers
@@ -13,7 +13,6 @@ from sCool_app.models import CustomUser, Staffs, Courses, Subjects, Students, Se
  
 def staff_home(request):
     # Fetching All Students under Staff
- 
     subjects = Subjects.objects.filter(staff_id=request.user.id)
     course_id_list = []
     for subject in subjects:
@@ -67,9 +66,6 @@ def staff_home(request):
     }
     return render(request, "staff_template/staff_home.html", context)
 
-def new_func():
-    return []
- 
  
  
 def staff_take_attendance(request):
@@ -137,7 +133,7 @@ def staff_feedback_save(request):
             return redirect('staff_feedback')
  
  
-# WE don't need csrf_token when using Ajax
+
 @csrf_exempt
 def get_students(request):
     # Getting Values from Ajax POST 'Fetch Student'
@@ -163,7 +159,6 @@ def get_students(request):
  
  
  
- 
 @csrf_exempt
 def save_attendance_data(request):
     # Get Values from Staf Take Attendance form via AJAX (JavaScript)
@@ -177,7 +172,6 @@ def save_attendance_data(request):
     session_year_model = SessionYearModel.objects.get(id=session_year_id)
  
     json_student = json.loads(student_ids)
-    # print(dict_student[0]['id'])
  
     # print(student_ids)
     try:
@@ -195,8 +189,6 @@ def save_attendance_data(request):
         return HttpResponse("Error")
  
  
- 
- 
 def staff_update_attendance(request):
     subjects = Subjects.objects.filter(staff_id=request.user.id)
     session_years = SessionYearModel.objects.all()
@@ -208,8 +200,6 @@ def staff_update_attendance(request):
  
 @csrf_exempt
 def get_attendance_dates(request):
-    
- 
     # Getting Values from Ajax POST 'Fetch Student'
     subject_id = request.POST.get("subject")
     session_year = request.POST.get("session_year_id")

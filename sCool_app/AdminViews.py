@@ -11,7 +11,7 @@ from sCool_app.models import CustomUser, Staffs, Courses, Subjects, Students, Se
 from .forms import AddStudentForm, EditStudentForm
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# ADMIN FUNCTIONS
+# ADMIN METHODS
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Admin Home
@@ -144,7 +144,6 @@ def admin_get_attendance_dates(request):
 
     session_model = SessionYearModel.objects.get(id=session_year)
 
-    # students = Students.objects.filter(course_id=subject_model.course_id, session_year_id=session_model)
     attendance = Attendance.objects.filter(subject_id=subject_model, session_year_id=session_model)
 
     # Only Passing Student Id and Student Name Only
@@ -175,7 +174,7 @@ def admin_get_attendance_student(request):
 
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# ADD FUNCTIONS
+# ADD METHODS
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Add Staff
@@ -337,7 +336,7 @@ def add_subject_save(request):
 
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# MANAGE FUNCTIONS
+# MANAGE METHODS
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Manage Staff
@@ -641,14 +640,12 @@ def edit_subject_save(request):
             subject.save()
 
             messages.success(request, "Subject Updated Successfully.")
-            # return redirect('/edit_subject/'+subject_id)
             return HttpResponseRedirect(reverse("edit_subject", kwargs={"subject_id":subject_id}))
 
         except:
             messages.error(request, "Failed to Update Subject.")
             return HttpResponseRedirect(reverse("edit_subject", kwargs={"subject_id":subject_id}))
-            # return redirect('/edit_subject/'+subject_id)
-
+        
 def delete_subject(request, subject_id):
     subject = Subjects.objects.get(id=subject_id)
     try:
@@ -661,7 +658,7 @@ def delete_subject(request, subject_id):
 
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# AUTHENTICATION FUNCTIONS
+# AUTHENTICATION METHODS
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 @csrf_exempt
@@ -685,7 +682,7 @@ def check_username_exist(request):
 
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# FEEDBACK FUNCTIONS
+# FEEDBACK METHODS
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 def student_feedback_message(request):

@@ -14,7 +14,6 @@ def loginPage(request):
     return render(request, 'login.html')
 
 
-
 def doLogin(request):
     if request.method != "POST":
         return HttpResponse("<h2>Method Not Allowed</h2>")
