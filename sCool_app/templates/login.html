@@ -5,11 +5,13 @@
 
 <body class="hold-transition login-page bg">
 <div class="login-box">
-  <div class="login-logo">
-    <a href="{% url 'login' %}"><b>sCool</a>
-  </div>
+  
   <!-- /.login-logo -->
   <div class="card">
+    <div class="login-logo login-card-body">
+      <img src="{% static 'dist/img/Logo2.png' %}" style="width: 185px;" alt="logo">
+      <p><a href="{% url 'login' %}"><b>sCool</a></p>
+    </div>
     <div class="card-body login-card-body">
       <p class="login-box-msg">Sign in to your sCool account</p>
 
